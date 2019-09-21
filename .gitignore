@@ -105,6 +105,6 @@ venv.bak/
 
 # custom
 config.sh
-/src/data/customers
-/src/data/accounts
-/src/data/customers_*
+/src/data/customer*
+/src/data/account*
+/src/data/transaction*

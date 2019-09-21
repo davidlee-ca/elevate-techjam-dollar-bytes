@@ -22,7 +22,7 @@ def get_customer_ids(customer_id_file):
     return cids
 
 
-def cids_in_chunks(cids, size=1000):
+def cids_in_chunks(cids, size=500):
     # chunkify the customer IDs
     starting_index, count = 0, 1
     while starting_index < len(cids):
@@ -47,6 +47,6 @@ def get_accounts(count, cids):
 if __name__ == "__main__":
     cids = get_customer_ids(customer_id_file)
 
-    for count, customers in cids_in_chunks(cids):
+    for count, customers in cids_in_chunks(cids, 500):
         print(f"Starting bin {count}")
         get_accounts(count, customers)
