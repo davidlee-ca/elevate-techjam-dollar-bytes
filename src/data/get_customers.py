@@ -15,14 +15,16 @@ for i in range(maximum_number_of_requests):
         headers = { 'Authorization': api_key },
         json={ 'continuationToken': continuation_key } )
     response_data = response.json()
-    filename = destination_file_prefix + str(i).zfill(zfill_padding) + '.json'
-    continuation_key = response_data['result']['continuationToken']
-    
     print(response)
-    print(f"Continuation key: {continuation_key}")
 
+    filename = destination_file_prefix + str(i).zfill(zfill_padding) + '.json'
     with(open(filename, 'w')) as w:
         json.dump(response_data, w)
-    
-    if not continuation_key:
+
+    # Finish 
+    if 'continuationToken' in response_data['result']:
+        continuation_key = response_data['result']['continuationToken']
+        print(f"Continuation key: {continuation_key}")
+    else:
+        print("No continuation key found! Exiting...")
         break
