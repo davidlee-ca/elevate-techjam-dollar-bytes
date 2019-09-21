@@ -36,9 +36,9 @@ def get_accounts(count, cids):
     urls = (f"https://api.td-davinci.com/api/customers/{cid}/accounts" for cid in cids)
     rs = (grequests.get(u, headers={'Authorization': api_key}) for u in urls)
     accounts = grequests.map(rs)
-    accounts_data = [acct.json() for acct in accounts]
-    bank_accounts = list(chain.from_iterable(acct['result']['bankAccounts'] for acct in accounts_data))
-    
+    accounts_data = [acct.json() for acct in accounts if acct]
+    bank_accounts = list(chain.from_iterable(acct['result'].get('bankAccounts') for acct in accounts_data))
+
     filename = destination_file_prefix + str(count).zfill(zfill_padding) + '.json'
     with(open(filename, 'w')) as fw:
         json.dump(bank_accounts, fw)
