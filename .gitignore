@@ -107,3 +107,4 @@ venv.bak/
 config.sh
 /src/data/customers
 /src/data/accounts
+/src/data/customers_*
