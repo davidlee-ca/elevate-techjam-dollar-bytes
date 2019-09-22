@@ -1,8 +1,15 @@
 # Elevate Tech Jam Hackathon: Dollar Bytes
 
+## Table of Contents
+
+1. [About](#about)
+2. [Product Design](#product-design)
+3. [Data Analysis](#data-analysis)
+4. [Team](#team)
+
 ## About
 
-This repository contains the submission for the [Elevate](https://elevate.ca/) [Tech Jam Hackathon](https://elevate-tech-jam-2019.devpost.com/) from Team Dollar Bytes.
+This repository contains the submission for the [Elevate](https://elevate.ca/) [Tech Jam Hackathon](https://elevate-tech-jam-2019.devpost.com/) from [Team Dollar Bytes](#team).
 
 ## Product Design
 
