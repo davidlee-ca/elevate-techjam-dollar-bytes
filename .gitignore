@@ -108,3 +108,8 @@ config.sh
 /src/data/customer*
 /src/data/account*
 /src/data/transaction*
+/src/scraper/customer*
+/src/scraper/account*
+/src/scraper/transaction*
+nohup.out
+*.log
