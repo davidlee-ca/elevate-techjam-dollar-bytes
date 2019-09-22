@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# custom
+config.sh
+/src/data/customer*
+/src/data/account*
+/src/data/transaction*
+/src/scraper*
+nohup.out
+*.log
